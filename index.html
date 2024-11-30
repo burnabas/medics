@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container" id="auth-container">
+        <div class="auth-box" id="login-box">
+            <h2><i class="fas fa-heartbeat"></i> Medical Assistant Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+        </div>
+
+        <div class="auth-box" id="register-box" style="display: none;">
+            <h2><i class="fas fa-heartbeat"></i> Create Account</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <div class="container" id="chat-app" style="display: none;">
+        <div class="header">
+            <div class="header-left">
+                <div class="user-section">
+                    <div class="profile-section">
+                        <div class="profile-picture-container">
+                            <img id="profilePicture" src="default-avatar.png" alt="Profile Picture">
+                            <div class="upload-overlay">
+                                <label for="profilePictureInput" class="upload-btn">
+                                    <i class="fas fa-camera"></i>
+                                </label>
+                                <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                        <span id="username-display"></span>
+                    </div>
+                    <button id="logout-button" class="logout-button">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+                <div class="title-section">
+                    <h1><i class="fas fa-heartbeat"></i> Medical Assistant</h1>
+                    <p class="tagline">Your trusted health information companion</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="chat-container">
+            <!-- Messages will be added here dynamically -->
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Ask me about your health concerns..." autocomplete="off">
+            <button id="send-button">
+                <i class="fas fa-paper-plane"></i> Send
+            </button>
+        </div>
+    </div>
+    <script src="script_new.js"></script>
+</body>
+</html>
